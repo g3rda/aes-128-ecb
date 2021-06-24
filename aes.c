@@ -144,8 +144,8 @@ void InvMixColumns(unsigned char state[4][Nb]){
 
 // add a round key to the state (by XOR)
 void AddRoundKey(unsigned char state[4][Nb], unsigned char keys[Nb*(Nr+1)][4], unsigned char round){
-  for(int i = 0; i<Nb; i++){
-    for(int j = 0; j<4; j++){
+  for(int i = 0; i<4; i++){
+    for(int j = 0; j<Nb; j++){
       state[i][j] ^= keys[round*Nb+j][i];
     }
   }
